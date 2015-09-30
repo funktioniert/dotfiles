@@ -20,7 +20,7 @@ fi
 alias u="sudo apt-get update"
 alias s="apt-cache search"
 alias i="sudo apt-get update; sudo apt-get install"
-alias uu="sudo apt-get update; sudo apt-get distupgrade"
+alias uu="sudo apt-get update; sudo apt-get dist-upgrade"
 alias p="sudo apt-get purge"
 alias du1="du --max-depth 1 -h"
 
