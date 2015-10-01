@@ -15,6 +15,9 @@
   (menu-bar-mode -1)
   (scroll-bar-mode -1))
 
+;; moving between windows with M-left ...
+(windmove-default-keybindings 'meta)
+
 ;; smooth scrolling
 (setq scroll-margin 5
       scroll-conservatively 9999
