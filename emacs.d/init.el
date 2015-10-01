@@ -23,6 +23,9 @@
 (show-paren-mode 1)
 (global-hl-line-mode 1)
 
+;; font
+(set-face-attribute 'default nil :font "Hack-10")
+
 ;; no tabs
 (setq-default indent-tabs-mode nil)
 
@@ -46,9 +49,8 @@
 (use-package evil-leader
   :ensure t
   :config
-  (progn
-    (evil-leader/set-leader "<SPC>")
-    (global-evil-leader-mode)))
+  (evil-leader/set-leader "<SPC>")
+  (global-evil-leader-mode))
 
 (use-package evil
   :ensure t
@@ -65,8 +67,20 @@
 
 (use-package solarized-theme
   :ensure t
+  :init
+  (setq x-underline-at-descent-line t
+        solarized-high-contrast-mode-line t)
   :config
   (load-theme 'solarized-light t))
+
+(use-package powerline
+  :ensure t
+  :init
+  (setq powerline-default-separator 'wave
+        powerline-default-separator-dir '(right . left)
+        powerline-height 20)
+  :config
+  (powerline-center-evil-theme))
 
 (use-package fill-column-indicator
   :ensure t
