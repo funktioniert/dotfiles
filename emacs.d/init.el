@@ -61,7 +61,9 @@
   (evil-mode))
 
 (use-package diminish
-  :ensure t)
+  :ensure t
+  :init
+  (eval-after-load "undo-tree" '(diminish 'undo-tree-mode " ⓤ")))
 
 (use-package vi-tilde-fringe
   :ensure t
@@ -133,3 +135,20 @@
     :ensure t)
   (define-key helm-map (kbd "C-j") 'helm-next-line)
   (define-key helm-map (kbd "C-k") 'helm-previous-line))
+
+(use-package flycheck
+  :ensure t
+  :diminish " ⓢ"
+  :config
+  (evil-leader/set-key
+    "ec" 'flycheck-clear
+    "eh" 'flycheck-describe-checker
+    "en" 'flycheck-next-error
+    "ep" 'flycheck-previous-error)
+  (global-flycheck-mode))
+
+(use-package flycheck-pos-tip
+  :ensure t
+  :init
+  (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages))
+
