@@ -92,7 +92,7 @@
   :init
   (setq fci-rule-column 90)
   :config
-  (fci-mode))
+  (add-hook 'after-change-major-mode-hook 'fci-mode))
 
 (use-package expand-region
   :ensure t
