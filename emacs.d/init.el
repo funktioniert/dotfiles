@@ -49,6 +49,12 @@
 
 (require 'use-package)
 
+(use-package saveplace
+  :ensure t
+  :init
+  (setq-default save-place t
+                save-place-file "~/.emacs.d/saved-places"))
+
 (use-package evil-leader
   :ensure t
   :config
