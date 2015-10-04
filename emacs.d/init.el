@@ -147,8 +147,3 @@
     "ep" 'flycheck-previous-error)
   (global-flycheck-mode))
 
-(use-package flycheck-pos-tip
-  :ensure t
-  :init
-  (setq flycheck-display-errors-function 'flycheck-pos-tip-error-messages))
-
