@@ -60,6 +60,12 @@
   :config
   (evil-mode))
 
+(use-package evil-nerd-commenter
+  :ensure t
+  :config
+  (evil-leader/set-key
+    "ci" 'evilnc-comment-or-uncomment-lines))
+
 (use-package diminish
   :ensure t
   :init
