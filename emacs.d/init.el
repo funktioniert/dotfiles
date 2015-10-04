@@ -147,3 +147,15 @@
     "ep" 'flycheck-previous-error)
   (global-flycheck-mode))
 
+(use-package whitespace
+  :ensure t
+  :diminish " ⓦ"
+  :config
+  (evil-leader/set-key
+    "tw" 'whitespace-mode)
+  (setq whitespace-line-column nil))
+
+(use-package ws-butler
+  :ensure t
+  :init
+  (add-hook 'prog-mode-hook 'ws-butler-mode))
