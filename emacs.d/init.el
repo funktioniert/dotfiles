@@ -135,10 +135,15 @@
     "h /" 'helm-occur
     "/"   'helm-occur)
   :config
-  (setq helm-M-x-fuzzy-match t)
+  (setq helm-M-x-fuzzy-match t
+        helm-apropos-fuzzy-match t
+        helm-file-cache-fuzzy-match t
+        helm-imenu-fuzzy-match t
+        helm-lisp-fuzzy-completion t
+        helm-recentf-fuzzy-match t
+        helm-semantic-fuzzy-match t
+        helm-buffers-fuzzy-matching t)
   (require 'helm-config)
-  (use-package helm-projectile
-    :ensure t)
   (define-key helm-map (kbd "C-j") 'helm-next-line)
   (define-key helm-map (kbd "C-k") 'helm-previous-line))
 
@@ -165,3 +170,40 @@
   :ensure t
   :init
   (add-hook 'prog-mode-hook 'ws-butler-mode))
+
+(use-package helm-projectile
+  :ensure t
+  :init
+  (setq projectile-switch-project-action 'helm-projectile)
+  (evil-leader/set-key
+    "pb"  'helm-projectile-switch-to-buffer
+    "pd"  'helm-projectile-find-dir
+    "pf"  'helm-projectile-find-file
+    "ph"  'helm-projectile
+    "pp"  'helm-projectile-switch-project
+    "pr"  'helm-projectile-recentf
+    "pv"  'projectile-vc
+    "sgp" 'helm-projectile-grep))
+
+(use-package projectile
+  :ensure t
+  :diminish " ⓟ"
+  :init
+  (setq projectile-enable-caching t
+        projectile-indexing-method 'alien
+        projectile-sort-order 'recentf)
+  (evil-leader/set-key
+    "p!" 'projectile-run-shell-command-in-root
+    "p&" 'projectile-run-async-shell-command-in-root
+    "pa" 'projectile-toggle-between-implementation-and-test
+    "pc" 'projectile-compile-project
+    "pD" 'projectile-dired
+    "pG" 'projectile-regenerate-tags
+    "pI" 'projectile-invalidate-cache
+    "pk" 'projectile-kill-buffers
+    "po" 'projectile-multi-occur
+    "pR" 'projectile-replace
+    "pT" 'projectile-find-test-file
+    "py" 'projectile-find-tag)
+  :config
+  (projectile-global-mode))
