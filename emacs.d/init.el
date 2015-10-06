@@ -1,3 +1,6 @@
+;;; A lot of this stuff is inspired or even copied from spacemacs.
+;;; See https://github.com/syl20bnr/spacemacs/ for more info about this awesome project.
+
 ;; utf8
 (set-default-coding-systems 'utf-8-unix)
 (set-terminal-coding-system 'utf-8-unix)
@@ -213,3 +216,25 @@
     "py" 'projectile-find-tag)
   :config
   (projectile-global-mode))
+
+(use-package magit
+  :ensure t
+  :init
+  (setq magit-completing-read-function 'magit-builtin-completing-read)
+  (evil-leader/set-key
+    "gb" 'magit-blame
+    "gl" 'magit-log-all
+    "gL" 'magit-log-buffer-file
+    "gs" 'magit-status
+    "gC" 'magit-commit)
+  :config
+  ;; seems to be necessary at the time of release
+  (require 'git-rebase)
+  ;; rebase mode
+  (evil-leader/set-key-for-mode 'git-rebase-mode
+    "mcc" 'git-rebase-server-edit
+    "mk" 'git-rebase-abort)
+  ;; commit mode
+  (evil-leader/set-key-for-mode 'git-commit-mode
+    "mcc" 'git-commit-commit
+    "mk" 'git-commit-abort))
