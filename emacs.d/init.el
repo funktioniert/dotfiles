@@ -238,3 +238,11 @@
   (evil-leader/set-key-for-mode 'git-commit-mode
     "mcc" 'git-commit-commit
     "mk" 'git-commit-abort))
+
+(use-package git-messenger
+  :ensure t
+  :init
+  (evil-leader/set-key
+    "gm" 'git-messenger:popup-message)
+  :config
+  (define-key git-messenger-map [escape] 'git-messenger:popup-close))
