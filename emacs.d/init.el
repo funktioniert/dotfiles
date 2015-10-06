@@ -246,3 +246,13 @@
     "gm" 'git-messenger:popup-message)
   :config
   (define-key git-messenger-map [escape] 'git-messenger:popup-close))
+
+(use-package git-timemachine
+  :ensure t
+  :init
+  (evil-leader/set-key
+    "gt" 'git-timemachine)
+  :config
+  ;; http://emacs.stackexchange.com/a/10588
+  (evil-make-overriding-map git-timemachine-mode-map 'normal)
+  (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
