@@ -29,11 +29,14 @@
 (show-paren-mode 1)
 (global-hl-line-mode 1)
 
-;; font
 (set-face-attribute 'default nil :font "Hack-10")
 
 ;; no tabs
 (setq-default indent-tabs-mode nil)
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+(setq require-final-newline t)
 
 ;; no backups
 (setq make-backup-files nil)
