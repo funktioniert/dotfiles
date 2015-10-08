@@ -65,6 +65,8 @@
   :ensure t
   :config
   (evil-leader/set-leader "<SPC>")
+  (evil-leader/set-key
+    "ar" 'align-regexp)
   (global-evil-leader-mode))
 
 (use-package evil
@@ -259,3 +261,31 @@
   ;; http://emacs.stackexchange.com/a/10588
   (evil-make-overriding-map git-timemachine-mode-map 'normal)
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
+
+(use-package haskell-mode
+  :ensure t
+  :init
+  (evil-leader/set-key
+    "lhni" 'haskell-navigate-imports
+    "lhfi" 'haskell-mode-format-imports
+    "lhl" 'haskell-process-load-or-reload
+    "lhr" 'haskell-interactive-bring
+    "lht" 'haskell-process-do-type
+    "lhi" 'haskell-process-do-info
+    "lhcb" 'haskell-process-cabal-build
+    "lhcr" 'haskell-interactive-mode-clear
+    "lhpc" 'haskell-process-cabal
+    "lh SPC" 'haskell-mode-contextual-space)
+  (setq haskell-stylish-on-save t
+        haskell-process-suggest-remove-import-lines t
+        haskell-process-auto-import-loaded-modules t
+        haskell-process-log t
+        haskell-interactive-popup-errors nil
+        haskell-process-type 'stack-ghci)
+  (add-to-list 'evil-emacs-state-modes 'haskell-interactive-mode)
+  :config
+  (add-hook 'haskell-mode-hook 'haskell-auto-insert-module-template)
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+  (require 'haskell-interactive-mode)
+  (require 'haskell-process)
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode))
