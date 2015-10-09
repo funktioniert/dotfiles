@@ -41,6 +41,10 @@
 ;; no backups
 (setq make-backup-files nil)
 
+(setq desktop-path '("~/.emacs.d/"))
+(setq desktop-dirname "~/.emacs.d/")
+(desktop-save-mode 1)
+
 ;; packages
 (require 'package)
 (setq package-enable-at-startup nil)
