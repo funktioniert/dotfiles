@@ -186,6 +186,7 @@
 
 (use-package ws-butler
   :ensure t
+  :diminish " ⓦⓑ"
   :init
   (add-hook 'prog-mode-hook 'ws-butler-mode))
 
