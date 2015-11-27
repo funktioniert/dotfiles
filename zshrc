@@ -24,12 +24,17 @@ alias uu="sudo apt-get update; sudo apt-get dist-upgrade"
 alias p="sudo apt-get purge"
 alias du1="du --max-depth 1 -h"
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.base16-railscasts.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 # antigen ######################################
 source $HOME/.antigen.zsh
 
 antigen use oh-my-zsh
 
 antigen theme agnoster
+DEFAULT_USER=maik
 
 antigen bundle git
 antigen bundle command-not-found

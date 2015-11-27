@@ -2,7 +2,7 @@ URxvt.scrollBar:	    false
 URxvt.scrollTtyOutput:      false
 URxvt.scrollWithBuffer:     true
 URxvt.scrollTtyKeypress:    true
-URxvt.font: 		    xft:Hack:size=10:antialias=true:hinting=true
+URxvt.font: 		    xft:DejaVu Sans Mono for Powerline:size=8:antialias=true
 URxvt.cursorBlink: 	    1
 URxvt.visualBell:	    true
 
@@ -11,30 +11,29 @@ URxvt.keysym.M-u: 	    perl:url-select:select_next
 URxvt.url-select.launcher:  firefox
 URxvt.url-select.underline: true
 
+! Base16 Railscasts
+! Scheme: Ryan Bates (http://railscasts.com)
 
-! Base16 Solarized
-! Scheme: Ethan Schoonover (http://ethanschoonover.com/solarized)
+#define base00 #2b2b2b
+#define base01 #272935
+#define base02 #3a4055
+#define base03 #5a647e
+#define base04 #d4cfc9
+#define base05 #e6e1dc
+#define base06 #f4f1ed
+#define base07 #f9f7f3
+#define base08 #da4939
+#define base09 #cc7833
+#define base0A #ffc66d
+#define base0B #a5c261
+#define base0C #519f50
+#define base0D #6d9cbe
+#define base0E #b6b3eb
+#define base0F #bc9458
 
-#define base00 #002b36
-#define base01 #073642
-#define base02 #586e75
-#define base03 #657b83
-#define base04 #839496
-#define base05 #93a1a1
-#define base06 #eee8d5
-#define base07 #fdf6e3
-#define base08 #dc322f
-#define base09 #cb4b16
-#define base0A #b58900
-#define base0B #859900
-#define base0C #2aa198
-#define base0D #268bd2
-#define base0E #6c71c4
-#define base0F #d33682
-
-*.foreground:   base02
-*.background:   base07
-*.cursorColor:  base02
+*.foreground:   base05
+*.background:   base00
+*.cursorColor:  base05
 
 *.color0:       base00
 *.color1:       base08
