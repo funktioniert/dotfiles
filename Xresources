@@ -8,7 +8,7 @@ URxvt.visualBell:	    true
 
 URxvt.perl-ext:		    default,url-select
 URxvt.keysym.M-u: 	    perl:url-select:select_next
-URxvt.url-select.launcher:  firefox
+URxvt.url-select.launcher:  google-chrome
 URxvt.url-select.underline: true
 
 ! Base16 Railscasts
