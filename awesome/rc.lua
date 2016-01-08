@@ -201,7 +201,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey },            "=",     function () awful.util.spawn("amixer set Master 9%+") end),
     awful.key({ modkey },            "-",     function () awful.util.spawn("amixer set Master 9%-") end),
     awful.key({ modkey },            "0",     function () awful.util.spawn("amixer sset Master toggle") end),
-    awful.key({ modkey },            "x",     function () awful.util.spawn("xtrlock") end)
+    awful.key({ }, 		     "F12", function () awful.util.spawn("xtrlock -b") end)
+    
 )
 
 clientkeys = awful.util.table.join(
