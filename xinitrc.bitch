@@ -8,5 +8,5 @@ nm-applet &
 xset b off
 xset -dpms
 xset s off
-firefox &
-exec /usr/bin/awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+google-chrome &
+exec /usr/bin/awesome >> /tmp/awesome.stdout 2>> /tmp/awesome.stderr
