@@ -1,13 +1,12 @@
 # exports / aliases ############################
 export EDITOR="emacs"
-export PATH="~/bin:$PATH"
 
 if [[ $TERM == "rxvt-unicode" ]] ; then
    export TERM="xterm-256color"
 fi
 
-if [[ -d "$HOME/.cabal" ]]; then
-   export PATH="$HOME/.cabal:$PATH"
+if [[ -d "$HOME/.local/bin" ]]; then
+   export PATH="$HOME/.local/bin:$PATH"
 fi
 
 if [[ -f /usr/local/bin/virtualenvwrapper.sh ]]; then
